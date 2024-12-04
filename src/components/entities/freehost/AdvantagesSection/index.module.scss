@@ -1,0 +1,57 @@
+@import '../../../../assets/mixins/responsive_font.scss';
+@import '../../../../assets/mixins/scroll_snap_mandatory.scss';
+@import '../../../../assets/styles/_variables/breakpoints.scss';
+@import '../../../../assets/mixins/border.scss';
+
+section.advantagesSection {
+    margin-top: 160px;
+    margin-bottom: 160px;
+    will-change: transform, opacity;
+
+    @media (max-width: $lg) {
+        margin-top: 120px;
+        margin-bottom: 120px;
+    }
+
+    @media (max-width: $md) {
+        margin-top: 80px;
+        margin-bottom: 80px;
+    }
+
+    .frame {
+        @include border;
+        padding: 48px;
+        display: flex;
+        flex-direction: column;
+        gap: 64px;
+
+        @media (max-width: $lg) {
+            padding: 16px;
+            gap: 48px;
+        }
+
+        @media (max-width: $md) {
+            gap: 32px;
+        }
+    }
+
+    .wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        will-change: transform;
+        align-items: center;
+        border-radius: 4px;
+        transition: transform 0.4s ease-in-out;
+    
+        @include scroll_snap_mandatory;
+
+        @media (max-width: $lg) {
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+            
+            display: flex;
+            gap: 16px;
+        }
+    }
+}

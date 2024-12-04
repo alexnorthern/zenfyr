@@ -1,0 +1,94 @@
+@import '../../../../assets/styles/_variables/breakpoints.scss';
+@import '../../../../assets/mixins/responsive_font.scss';
+@import '../../../../assets/mixins/scroll_snap_mandatory.scss';
+
+section.tariffsSection {
+    margin-top: -75px;
+    padding-top: 75px;
+
+    .frame {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+        @media (max-width: $lg) {
+            padding: 16px;
+            gap: 24px;
+        }
+    }
+
+    .navigation {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .list {
+            padding-right: 8px;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+
+            @include scroll_snap_mandatory;
+        }
+
+        a.catalogLink {
+            flex-grow: 1;
+            margin-left: auto;
+
+            span {
+                @include responsive_font(16, 16);
+                font-weight: 500;
+                line-height: 1.6;
+                color: #D8FFEE;
+                white-space: nowrap;
+            }
+
+            @media (max-width: $md) {
+                display: none;
+            }
+        }
+    }
+
+    .wrapper {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+        gap: 24px;
+
+        @media (max-width: $mg) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media (max-width: $lg) {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            max-width: 100%;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            @include scroll_snap_mandatory;
+        }
+    }
+
+    .showMore {
+        margin: 0 auto;
+
+        @media (max-width: $lg) {
+            display: none;
+        }
+
+        span {
+            @include responsive_font(16, 16);
+            font-weight: 400;
+            line-height: 1.6;
+            color: #D8FFEE;
+            transition: all .2s ease;
+
+            &:hover {
+                opacity: .6;
+                transition: all .15s ease-in-out;
+            }
+        }
+    }
+}

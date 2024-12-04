@@ -1,0 +1,12 @@
+
+@mixin scroll_snap_mandatory {
+    scroll-snap-type: x mandatory;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+
+    -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+    -webkit-overflow-scrolling: touch;
+    -webkit-text-size-adjust: none;
+    -ms-overflow-style: none;
+}

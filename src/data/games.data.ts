@@ -1,0 +1,118 @@
+import { icos } from '@/assets/images/ico/games';
+import { pics } from '@/assets/images/pic/games';
+import { Game } from '@/types/interfaces';
+
+export const games: Game[] = [
+    {
+        id: 'minecraft',
+        ico: icos.minecraft,
+        pic: pics.minecraft,
+        name: 'Minecraft',
+        disc: 'Кстати, тпс в порядке.',
+    },
+    {
+        id: 'garrys_mod',
+        ico: icos.garrys_mod,
+        pic: pics.garrys_mod,
+        name: 'Garry’s mod',
+        disc: 'Выбирайте то - что нужно.',
+    },
+    {
+        id: 'arma_2',
+        ico: icos.arma_2,
+        pic: pics.arma_2,
+        name: 'Arma 2',
+        disc: 'Выбирайте то - что нужно.',
+    },
+    {
+        id: 'valheim',
+        ico: icos.valheim,
+        pic: pics.valheim,
+        name: 'Valheim',
+        disc: 'Выбирайте то - что нужно.',
+    },
+    {
+        id: 'samp',
+        ico: icos.samp,
+        pic: pics.samp,
+        name: 'SAMP',
+        disc: 'Выбирайте то - что нужно.',
+    },
+    {
+        id: 'rust',
+        ico: icos.rust,
+        pic: pics.rust,
+        name: 'Rust',
+        disc: 'Выбирайте то - что нужно.',
+    },
+    {
+        id: 'arma_3',
+        ico: icos.arma_3,
+        pic: pics.arma_3,
+        name: 'Arma 3',
+        disc: 'Выбирайте то - что нужно.',
+    },
+    {
+        id: 'cs2',
+        ico: icos.cs2,
+        pic: pics.cs2,
+        name: 'CS2',
+        disc: 'Выбирайте то - что нужно.',
+    },
+    {
+        id: 'css',
+        ico: icos.css,
+        pic: pics.css,
+        name: 'CSS',
+        disc: 'Выбирайте то - что нужно.',
+    },
+    {
+        id: 'cs_16',
+        ico: icos.cs_16,
+        pic: pics.cs_16,
+        name: 'CS 1.6',
+        disc: 'Выбирайте то - что нужно.',
+    },
+    {
+        id: 'unturned',
+        ico: icos.unturned,
+        pic: pics.unturned,
+        name: 'Unturned',
+        disc: 'Выбирайте то - что нужно.',
+    },
+    {
+        id: '_7_days_to_die',
+        ico: icos._7_days_to_die,
+        pic: pics._7_days_to_die,
+        name: '7 Days to Die',
+        disc: 'Выбирайте то - что нужно.',
+    },
+    {
+        id: 'terraria',
+        ico: icos.terraria,
+        pic: pics.terraria,
+        name: 'Terraria',
+        disc: 'Выбирайте то - что нужно.',
+    },
+    {
+        id: 'ark',
+        ico: icos.ark,
+        pic: pics.ark,
+        name: 'ARK',
+        disc: 'Выбирайте то - что нужно.',
+    },
+    {
+        id: 'squad',
+        ico: icos.squad,
+        pic: pics.squad,
+        name: 'Squad',
+        disc: 'Выбирайте то - что нужно.',
+    },
+    {
+        id: 'starbound',
+        ico: icos.starbound,
+        pic: pics.starbound,
+        name: 'Starbound',
+        disc: 'Выбирайте то - что нужно.',
+    },
+]

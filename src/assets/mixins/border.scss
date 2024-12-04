@@ -1,0 +1,7 @@
+$borderRadius: 8px;
+
+@mixin border() {
+    border-radius: $borderRadius;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    background: radial-gradient(50.3% 52.97% at 54.34% -37.41%, rgba(152, 186, 150, 0.20) 0%, rgba(152, 186, 150, 0.00) 100%), #090A0D;
+}

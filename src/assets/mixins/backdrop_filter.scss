@@ -1,0 +1,11 @@
+
+@mixin backdrop_filter() {
+    backdrop-filter: blur(14.2px);
+    -webkit-backdrop-filter: blur(14.2px);
+    -moz-backdrop-filter: blur(14.2px);
+
+    // @supports not (backdrop-filter: blur(14.2px)) and not (-webkit-backdrop-filter: blur(14.2px)) and not (-moz-backdrop-filter: blur(14.2px)) {
+    //     background-color: rgba(255, 255, 255, 0.1);
+    //     backdrop-filter: none;
+    // }
+}

@@ -1,0 +1,48 @@
+@import '../../../../assets/mixins/border.scss';
+@import '../../../../assets/mixins/responsive_font.scss';
+@import '../../../../assets/styles/_variables/breakpoints.scss';
+
+.card {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+
+    flex: 1 0 0;
+    display: flex;
+    padding: 32px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-self: stretch;
+    gap: auto;
+    min-width: 358.5px;
+    @include border;
+
+    @media (max-width: $lg) {
+        flex: 330px 0 0;
+        min-height: 408px;
+    }
+
+    .head {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        h5 {
+            @include responsive_font(24, 14);
+            font-weight: 500;
+            line-height: 1.5;
+            color: #E3FFEC;
+        }
+    }
+
+    .body {
+        padding-top: 32px;
+
+        p {
+            @include responsive_font(16, 14);
+            font-weight: 400;
+            line-height: 1.6;
+            color: rgba(216, 255, 238, 0.85);
+        }
+    }
+}

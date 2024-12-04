@@ -1,0 +1,144 @@
+/**
+ * Font Family Configuration
+ * 
+ * Полная конфигурация шрифта
+ * Включает все начертания от Light (300) до ExtraBold (800)
+ * 
+ * Особенности:
+ * - Оптимизированная загрузка шрифтов (font-display: block)
+ * - Поддержка нормального и курсивного начертания
+ * - Правильная градация весов от 300 до 800
+ * 
+ * Использование
+ * 
+ * 1. Через SCSS:
+ *  .element {
+ *    @extend .font;
+ *    font-weight: 500;
+ *    font-style: italic;
+ *  }
+ * 
+ * 2. Через классы начертаний:
+ *  className='font-light'
+ *  className='font-regular'
+ *  className='font-medium'
+ *  className='font-semibold'
+ *  className='font-bold'
+ *  className='font-extrabold'
+ *
+ * 3. Через утилитарные классы:
+ *  className='text-light'
+ *  className='text-regular'
+ *  className='text-medium'
+ *  className='text-bold'
+ *  className='text-italic'
+ * 
+ * 4. Через систему заголовков:
+ *  heading-1 до heading-4
+ * 
+ * 5. Через BEM-компоненты
+ *  article__title
+ *  article__meta
+ *  article__content
+ */
+
+// Мапа с конфигурацией всех начертаний
+$font-weights: (
+  300: ('Light', 'LightItalic'),
+  400: ('Regular', 'Italic'),
+  500: ('Medium', 'MediumItalic'),
+  600: ('SemiBold', 'SemiBoldItalic'),
+  700: ('Bold', 'BoldItalic'),
+  800: ('ExtraBold', 'ExtraBoldItalic')
+);
+
+// Базовый путь к файлам шрифтов
+$font-path: './Inter/';
+
+/**
+ * Миксин для генерации @font-face
+ * @param {string} $weight - Вес шрифта
+ * @param {string} $style - Стиль (normal/italic)
+ * @param {string} $filename - Имя файла шрифта
+ */
+@mixin font-face($weight, $style, $filename) {
+  @font-face {
+    font-family: 'Inter';
+    src: url('#{$font-path}Inter-#{$filename}.ttf') format('truetype');
+    font-weight: $weight;
+    font-style: $style;
+    font-display: block;
+  }
+}
+
+// Генерация всех начертаний шрифта
+@each $weight, $styles in $font-weights {
+  // Нормальное начертание
+  @include font-face($weight, normal, nth($styles, 1));
+  
+  // Курсивное начертание
+  @include font-face($weight, italic, nth($styles, 2));
+}
+
+/**
+ * Вспомогательные классы для быстрого применения начертаний
+ * Пример использования: <p class="font-light-italic">Text</p>
+ */
+@each $weight, $styles in $font-weights {
+  $weight-name: nth($styles, 1);
+  
+  .font-#{to-lower-case($weight-name)} {
+    font-family: 'Inter', sans-serif;
+    font-weight: $weight;
+    font-style: normal;
+  }
+  
+  .font-#{to-lower-case($weight-name)}-italic {
+    font-family: 'Inter', sans-serif;
+    font-weight: $weight;
+    font-style: italic;
+  }
+}
+
+/**
+ * Основной класс для использования
+ * Применяет Regular (400) начертание по умолчанию
+ */
+.font {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/**
+ * Дополнительные утилитарные классы для типографики
+ */
+.text {
+  &-light {
+    font-weight: 300;
+  }
+  
+  &-regular {
+    font-weight: 400;
+  }
+  
+  &-medium {
+    font-weight: 500;
+  }
+  
+  &-semibold {
+    font-weight: 600;
+  }
+  
+  &-bold {
+    font-weight: 700;
+  }
+  
+  &-extrabold {
+    font-weight: 800;
+  }
+  
+  &-italic {
+    font-style: italic;
+  }
+}

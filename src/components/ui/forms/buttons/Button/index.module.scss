@@ -1,0 +1,96 @@
+@import '../../../../../assets/fonts/font.scss';
+@import '../../../../../assets/mixins/responsive_font.scss';
+
+button.button {
+    display: inline-flex;
+    padding: 12px 14px;
+    align-items: center;
+    gap: 10px;
+    border-radius: 8px;
+    background: var(--primary, radial-gradient(199.2% 62.3% at 71.12% 86%, rgba(255, 255, 255, 0.50) 13.29%, rgba(255, 255, 255, 0.00) 100%), linear-gradient(180deg, #00FF5D 50%, #00D44E 100%));
+    background-blend-mode: overlay, normal;
+    box-shadow: 0px 1px 2.4px 0px rgba(0, 255, 92, 0.15);
+
+    span {
+        flex-grow: 1;
+        background: var(--on_primary, linear-gradient(180deg, #252525 50%, #144722 100%));
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        @extend .font;
+        font-weight: 500;
+        @include responsive_font(16, 16);
+        font-style: normal;
+        line-height: normal;
+    }
+
+    svg {
+        min-width: 16px;
+        max-width: 16px;
+        height: 16px;
+    }
+
+    &[data-mode='primary'] {
+        border: 1px solid rgba(255, 255, 255, 0.10);
+
+        &:hover {
+            border: 1px solid rgba(152, 186, 150, 0.35);
+        }
+
+        &:focus,
+        &:active {
+            border: 1px solid rgba(74, 118, 72, 0.35);
+        }
+
+        &:disabled {
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            background: radial-gradient(50.3% 52.97% at 54.34% -37.41%, rgba(152, 186, 150, 0.20) 0%, rgba(152, 186, 150, 0.00) 100%), #101114;
+            cursor: not-allowed;
+            
+            span,
+            svg {
+                color: #666666;
+            }
+        }
+    }
+
+    &[data-mode='secondary'] {
+        background: var(--primary, radial-gradient(199.2% 62.3% at 71.12% 86%, rgba(255, 255, 255, 0.50) 13.29%, rgba(255, 255, 255, 0.00) 100%), linear-gradient(180deg, #00FF5D 50%, #00D44E 100%));
+        background-blend-mode: overlay, normal;
+        box-shadow: 0px 1px 2.4px 0px rgba(0, 255, 92, 0.15);
+
+        &:hover {
+            background: var(--primary, radial-gradient(199.2% 62.3% at 71.12% 86%, rgba(255, 255, 255, 0.50) 13.29%, rgba(255, 255, 255, 0.00) 100%), linear-gradient(180deg, #00FF5D 50%, #00D44E 100%));
+            background-blend-mode: overlay, normal;
+            box-shadow: 0px -14px 15px 0px rgba(255, 255, 255, 0.30) inset, 0px 1px 11.4px 0px rgba(0, 255, 92, 0.25);
+        }
+
+        &:focus,
+        &:active {
+            background: var(--primary, radial-gradient(199.2% 62.3% at 71.12% 86%, rgba(255, 255, 255, 0.50) 13.29%, rgba(255, 255, 255, 0.00) 100%), linear-gradient(180deg, #00FF5D 50%, #00D44E 100%));
+            background-blend-mode: overlay, normal;
+            box-shadow: 0px -100px 0px 0px rgba(0, 0, 0, 0.16) inset, 0px 1px 2.4px 0px rgba(0, 255, 92, 0.15);
+        }
+
+        &:disabled {
+            background: radial-gradient(199.2% 62.3% at 71.12% 86%, rgba(255, 255, 255, 0.10) 13.29%, rgba(255, 255, 255, 0.00) 100%), #302E2E;
+            background-blend-mode: overlay, normal;
+            cursor: not-allowed;
+
+            span,
+            svg {
+                color: #585858;
+            }
+        }
+    }
+
+    &[data-sm=true] {
+        padding: 10px 14px;
+        gap: 4px;
+
+        span {
+            @include responsive_font(14, 14);
+        }
+    }
+}

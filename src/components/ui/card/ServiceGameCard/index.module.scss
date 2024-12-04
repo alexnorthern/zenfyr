@@ -1,0 +1,35 @@
+@import '../../../../assets/styles/_variables/breakpoints.scss';
+@import '../../../../assets/mixins/responsive_font.scss';
+@import '../../../../assets/mixins/border.scss';
+
+.serviceGameCard {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  flex: 1 0 0;
+  align-self: stretch;
+
+  @include border;
+  border-radius: 14px;
+  overflow: hidden;
+
+  filter: grayscale(100%); 
+  transition: all .2s ease;
+
+  &:hover {
+    filter: grayscale(0%); 
+    transform: scale(1.03);
+    transition: all .15s ease-in-out;
+  }
+
+  span {
+    position: absolute;
+    bottom: 32px;
+    left: 32px;
+    @include responsive_font(24, 14);
+    font-weight: 500;
+    line-height: 1.5;
+    color: #e3ffec;
+  }
+}

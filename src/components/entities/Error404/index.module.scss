@@ -1,0 +1,37 @@
+@import '../../../assets/styles/_variables/breakpoints.scss';
+
+.error404Section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90dvh;
+
+    background-image: url(../../../assets/images/pic/bg.png);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top right;
+
+    svg {
+        margin: 0 auto;
+    }
+
+    .frame {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+
+        @media (max-width: $lg) {
+            align-items: flex-start;
+            justify-content: flex-start;
+
+            & > div {
+                h2, p {
+                    text-align: left !important;
+                }
+            }
+        }
+    }
+}

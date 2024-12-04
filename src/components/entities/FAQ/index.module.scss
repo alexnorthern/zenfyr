@@ -1,0 +1,21 @@
+@import '../../../assets/styles/_variables/breakpoints.scss';
+@import '../../../assets/mixins/responsive_font.scss';
+@import '../../../assets/mixins/scroll_snap_mandatory.scss';
+
+.faqSection {
+    margin-top: 163px;
+
+    @media (max-width: $lg) {
+        margin-top: 64px;
+    }
+
+    .frame {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+        @media (max-width: $lg) {
+            gap: 24px;
+        }
+    }
+}

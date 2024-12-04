@@ -1,0 +1,47 @@
+@import '../../../../assets/mixins/border.scss';
+@import '../../../../assets/mixins/responsive_font.scss';
+
+.gameBage {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+
+    padding: 12px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    @include border;
+    background: radial-gradient(50.3% 52.97% at 54.34% -37.41%, rgba(152, 186, 150, 0.20) 0%, rgba(152, 186, 150, 0.00) 100%), #101114;
+
+    .image {
+        width: 32px;
+        min-width: 32px;
+    }
+
+    img {
+        filter: grayscale(100%); 
+        transition: all .2s ease;
+    }
+
+    span {
+        @include responsive_font(16, 16);
+        font-weight: 500;
+        line-height: 1.6;
+        color: #D8FFEE;
+        opacity: .6;
+        white-space: nowrap;
+        transition: all .2s ease;
+    }
+
+    &:hover, 
+    &.active {
+        img {
+            filter: grayscale(0%); 
+            transition: all .15s ease-in-out;
+        }
+        span {
+            opacity: 1;
+            transition: all .15s ease-in-out;
+        }
+    }
+}

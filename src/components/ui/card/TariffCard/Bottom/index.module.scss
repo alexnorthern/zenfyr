@@ -1,0 +1,23 @@
+@import '../../../../../assets/mixins/responsive_font.scss';
+
+.bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    align-self: stretch;
+
+    .item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        align-self: stretch;
+
+        span {
+            @include responsive_font(16, 16);
+            font-weight: 400;
+            line-height: 1.6;
+            color: rgba(216, 255, 238, 0.65);
+        }
+    }
+}

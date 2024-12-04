@@ -1,0 +1,16 @@
+/**
+ * System colors
+ * Определяет основные цветовые палитры
+ */
+$primary: #00FF5D;
+$on_primary: #252525;
+
+
+/**
+ * Экспорт переменных для использования в JS
+ */
+:export {
+  primary: $primary;
+  onPrimary: $on_primary;
+
+}

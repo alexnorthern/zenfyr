@@ -1,0 +1,60 @@
+@import '../../../assets/mixins/responsive_font.scss';
+
+.promo {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+
+    h2.title {
+        font-size: 48px;
+        @include responsive_font(48, 32);
+        font-weight: 500;
+        line-height: 1.3;
+        color: #FFF;
+        text-align: center;
+
+        span {
+            background-clip: text !important;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background: var(--primary, linear-gradient(180deg, #00FF5D 50%, #00D44E 100%));
+        }
+    }
+
+    p.disc {
+        @include responsive_font(16, 14);
+        font-weight: 400;
+        color: rgba(216, 255, 238, 0.85);
+        text-align: center;
+    }
+
+    .ellipse {
+        position: absolute;
+        top: -50%;
+        width: 235px;
+        height: 83px;
+        flex-shrink: 0;
+        background-color: #00FF5D;
+        border-radius: 50%;
+        animation: glow 1.5s ease-in-out infinite;
+        filter: blur(111px);
+        position: relative;
+
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 10px #00FF5D, 0 0 20px #00FF5D, 0 0 30px #00FF5D, 0 0 40px #00FF5D;
+            }
+
+            50% {
+                box-shadow: 0 0 15px #00FF5D, 0 0 25px #00FF5D, 0 0 35px #00FF5D, 0 0 50px #00FF5D;
+            }
+
+            100% {
+                box-shadow: 0 0 10px #00FF5D, 0 0 20px #00FF5D, 0 0 30px #00FF5D, 0 0 40px #00FF5D;
+            }
+        }
+    }
+}

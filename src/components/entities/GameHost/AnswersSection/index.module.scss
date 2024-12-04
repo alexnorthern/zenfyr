@@ -1,0 +1,21 @@
+@import '../../../../assets/styles/_variables/breakpoints.scss';
+
+
+.answersSection {
+    margin-top: 163px;
+
+    @media (max-width: $lg) {
+        margin-top: 64px;
+    }
+
+    .frame {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+        @media (max-width: $lg) {
+            padding: 16px;
+            gap: 24px;
+        }
+    }
+}

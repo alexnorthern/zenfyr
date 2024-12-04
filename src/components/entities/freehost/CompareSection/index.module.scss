@@ -1,0 +1,76 @@
+@import '../../../../assets/styles/_variables/breakpoints.scss';
+@import '../../../../assets/mixins/scroll_snap_mandatory.scss';
+@import '../../../../assets/mixins/responsive_font.scss';
+@import '../../../../assets/mixins/border.scss';
+
+
+section.compareSection {
+    margin-top: 160px;
+    padding-bottom: 230px;
+
+    @media (max-width: $lg) {
+        margin-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    .frame {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+        @media (max-width: $lg) {
+            padding: 16px;
+            gap: 24px;
+        }
+    }
+
+    .tableWrapper {
+        overflow-x: auto;
+        @include scroll_snap_mandatory;
+    }
+
+    .table {
+        padding: 24px;
+        display: table;
+        width: 100%;
+        border-collapse: separate;
+        overflow: hidden;
+        min-width: 1220px;
+
+        border-radius: 8px;
+        @include border;
+        background: radial-gradient(84.97% 112.83% at 41.16% -71.07%, rgba(173, 255, 179, 0.20) 15.02%, rgba(191, 255, 191, 0.00) 100%), rgba(28, 32, 43, 0.15);
+
+        .tableHeader {
+            display: table-header-group;
+
+            .headerCell {
+                display: table-cell;
+                font-weight: 500;
+                @include responsive_font(16, 14);
+                line-height: 1.6;
+                color: rgba(216, 255, 238, 0.85);
+            }
+        }
+
+        .tableBody {
+            display: table-row-group;
+
+            .tableRow {
+                display: table-row;
+                border: 1px solid red;
+
+                &:nth-child(even) {
+                }
+
+                > div {
+                    display: table-cell;
+                    padding: 6px;
+                    @include responsive_font(16, 14);
+                    line-height: 1.6;
+                    color: rgba(216, 255, 238, 0.85);
+                }
+            }
+        }
+    }
+}

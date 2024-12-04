@@ -1,0 +1,103 @@
+@import '../../../../assets/styles/_variables/breakpoints.scss';
+@import '../../../../assets/mixins/responsive_font.scss';
+@import '../../../../assets/mixins/border.scss';
+
+.serviceGamesSection {
+    margin-top: 163px;
+
+    @media (max-width: $lg) {
+        margin-top: 64px;
+    }
+
+    .frame {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+        @media (max-width: $lg) {
+            gap: 24px;
+        }
+    }
+
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+
+        .controll {
+            display: flex;
+            gap: 22px;
+        }
+
+        .list {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: auto;
+            gap: 24px;
+
+            @media (max-width: $lg) {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(auto-fit, 101.5px);
+
+                &>a {
+                    height: 101.5px;
+                }
+            }
+        }
+    }
+}
+
+.filter {
+    display: flex;
+    width: 118px;
+    height: 46px;
+    padding: 12px 14px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+
+    border-radius: 8px;
+    @include border;
+    background: radial-gradient(50.3% 52.97% at 54.34% -37.41%, rgba(152, 186, 150, 0.20) 0%, rgba(152, 186, 150, 0.00) 100%);
+
+    svg {
+        width: 13.4px;
+        min-width: 13px;
+    }
+
+    span {
+        @include responsive_font(14, 14);
+        font-weight: 400;
+        line-height: 1.6;
+        color: rgba(216, 255, 238, 0.85);
+    }
+}
+
+.searchInput {
+    display: flex;
+    padding: 12px 14px;
+    align-items: center;
+    gap: 8px;
+
+    border-radius: 8px;
+    @include border;
+    background: radial-gradient(50.3% 52.97% at 54.34% -37.41%, rgba(152, 186, 150, 0.20) 0%, rgba(152, 186, 150, 0.00) 100%);
+
+    svg {
+        width: 13.4px;
+        min-width: 13px;
+    }
+
+    input {
+        background-color: transparent;
+        @include responsive_font(14, 14);
+        font-weight: 400;
+        line-height: 1.6;
+        color: #fff;
+
+        &::placeholder {
+            color: rgba(216, 255, 238, 0.85);
+        }
+    }
+}

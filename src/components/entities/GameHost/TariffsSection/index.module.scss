@@ -1,0 +1,45 @@
+@import '../../../../assets/styles/_variables/breakpoints.scss';
+@import '../../../../assets/mixins/responsive_font.scss';
+@import '../../../../assets/mixins/scroll_snap_mandatory.scss';
+
+section.tariffsSection {
+    margin-top: 163px;
+
+    @media (max-width: $lg) {
+        margin-top: 64px;
+    }
+
+    .frame {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+        @media (max-width: $lg) {
+            padding: 16px;
+            gap: 24px;
+        }
+    }
+
+
+    .wrapper {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+        gap: 24px;
+
+        @media (max-width: $mg) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media (max-width: $lg) {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            max-width: 100%;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            @include scroll_snap_mandatory;
+        }
+    }
+}

@@ -1,0 +1,63 @@
+@import '../../../../assets/mixins/responsive_font.scss';
+@import '../../../../assets/styles/_variables/breakpoints.scss';
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90dvh;
+
+    background-image: url(../../../../assets/images/pic/bg.png);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top right;
+    
+
+    .coll {
+        display: flex;
+    }
+
+    @media (max-width: $lg) {
+        margin: 64px 0;
+        height: max-content;
+        align-items: flex-start;
+
+        .coll {
+            align-items: flex-start;
+            gap: 24px;
+        }
+    }
+
+    h1 {
+        @include responsive_font(88, 47);
+        font-weight: 600;
+        line-height: 100%;
+        letter-spacing: -4.4px;
+        color: #E3FFEC;
+        text-align: center;
+
+        @media (max-width: $lg) {
+            text-align: left;
+        }
+
+        span {
+            letter-spacing: -4.4px;
+            background: var(--primary, linear-gradient(180deg, #00FF5D 50%, #00D44E 100%));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+
+    p {
+        @include responsive_font(16, 14);
+        font-weight: 400;
+        color: rgba(216, 255, 238, 0.85);
+        text-align: center;
+
+        @media (max-width: $lg) {
+            text-align: left;
+        }
+    }
+}
